@@ -23,7 +23,7 @@ define Package/noodles-default-settings
   CATEGORY:=LuCI
   TITLE:=LuCI support for Default Settings
   PKGARCH:=all
-  DEPENDS:=+luci-lib-base
+  DEPENDS:=+luci-lib-base +luci
 endef
 
 define Package/noodles-default-settings-chn
@@ -36,9 +36,6 @@ define Build/Compile
 endef
 
 define Package/noodles-default-settings/install
-	# $(INSTALL_DIR) $(1)/etc
-	# $(INSTALL_DATA) ./files/openwrt_banner $(1)/etc/openwrt_banner
-
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/99-default-settings $(1)/etc/uci-defaults/
 endef
