@@ -6,6 +6,8 @@ uci commit luci
 uci set fstab.@global[0].anon_mount=1
 uci commit fstab
 
+uci set dockerd.globals.data_root=/overlay/upper/opt/docker
+
 rm -f /www/luci-static/resources/view/status/include/50_dsl.js
 rm -f /www/luci-static/resources/view/status/include/70_ddns.js
 rm -f /www/luci-static/resources/view/status/include/80_minidlna.js
