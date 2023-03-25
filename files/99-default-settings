@@ -46,10 +46,10 @@ echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp 
 
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
-#wifi up
+wifi up
 
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='R22.03.3'" >> /etc/openwrt_release
+echo "DISTRIB_REVISION='R22.03-SNAPSHOT'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt v$(date +'%Y.%m.%d') by noodles '" >> /etc/openwrt_release
 
@@ -59,7 +59,7 @@ echo "luciversion = '*侯永华*'" >> /usr/lib/lua/luci/version.lua
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo 'log-facility=/dev/null' >> /etc/dnsmasq.conf
 
-#rm -rf /tmp/luci-modulecache/
-#rm -f /tmp/luci-indexcache
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
 
 exit 0
