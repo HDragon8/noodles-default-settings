@@ -32,12 +32,24 @@ define Package/noodles-default-settings-chn
   DEPENDS:=+noodles-default-settings +@LUCI_LANG_zh_Hans
 endef
 
+define Build/Prepare
+	chmod -R +x ./files/usr/share target/*/{*,}/base-files/{etc/init.d,usr/bin} >/dev/null || true
+endef
+
 define Build/Compile
 endef
 
 define Package/noodles-default-settings/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/99-default-settings $(1)/etc/uci-defaults/
+	$(CP) ./files/* $(1)/
+	echo $(BOARD)$(TARGETID)
+	if [ -d ./target/$(BOARD)/base-files/. ]; then \
+		$(CP) ./target/$(BOARD)/base-files/* $(1)/; \
+	fi
+	if [ -d ./target/$(TARGETID)/base-files/. ]; then \
+		$(CP) ./target/$(TARGETID)/base-files/* $(1)/; \
+	fi;
 endef
 
 define Package/noodles-default-settings-chn/install
