@@ -49,9 +49,7 @@ define Package/noodles-default-settings/install
 	fi
 	if [ -d ./target/$(TARGETID)/base-files/. ]; then \
 		$(CP) ./target/$(TARGETID)/base-files/* $(1)/; \
-	fi; \
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	po2lmo ./po/zh_Hans/default.po $(1)/usr/lib/lua/luci/i18n/default.zh-cn.lmo
+	fi;
 endef
 
 define Package/noodles-default-settings-chn/install
