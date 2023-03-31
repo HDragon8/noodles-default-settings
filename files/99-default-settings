@@ -54,7 +54,7 @@ sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt v$(date +'%Y.%m.%d') by noodles '" >> /etc/openwrt_release
 
 sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
-echo "luciversion = '*侯永华*'" >> /usr/lib/lua/luci/version.lua
+echo "luciversion = '*noodles*'" >> /usr/lib/lua/luci/version.lua
 
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo 'log-facility=/dev/null' >> /etc/dnsmasq.conf
