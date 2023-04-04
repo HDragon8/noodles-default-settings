@@ -9,7 +9,7 @@ uci commit fstab
 #uci set dockerd.globals.data_root=/overlay/upper/opt/docker
 
 #rm -f /www/luci-static/resources/view/status/include/50_dsl.js
-#rm -f /www/luci-static/resources/view/status/include/70_ddns.js
+rm -f /www/luci-static/resources/view/status/include/70_ddns.js
 #rm -f /www/luci-static/resources/view/status/include/80_minidlna.js
 #rm -f /www/luci-static/resources/view/status/include/80_upnp.js
 
@@ -53,8 +53,10 @@ echo "DISTRIB_REVISION='OP22.03'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt v$(date +'%Y.%m.%d') by noodles '" >> /etc/openwrt_release
 
-sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
-echo "luciversion = '*noodles*'" >> /usr/lib/lua/luci/version.lua
+#sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
+#echo "luciversion = '*noodles*'" >> /usr/lib/lua/luci/version.lua
+sed -i '/luciname/d' /usr/lib/lua/luci/version.lua
+echo "luciname = 'LuCI openwrt-22.03'" >> /usr/lib/lua/luci/version.lua
 
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo 'log-facility=/dev/null' >> /etc/dnsmasq.conf
