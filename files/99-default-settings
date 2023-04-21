@@ -25,9 +25,9 @@ sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/p910nd.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/usb_printer.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/xunlei.lua
 sed -i 's/services/nas/g'  /usr/lib/lua/luci/view/minidlna_status.htm
-#sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aliyundrive-fuse.lua
-#sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aliyundrive-webdav.lua
-#sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/go-aliyundrive-webdav.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aliyundrive-fuse.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aliyundrive-webdav.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/go-aliyundrive-webdav.lua
 #sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/kodexplorer.lua
 #sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/linkease.lua
 
