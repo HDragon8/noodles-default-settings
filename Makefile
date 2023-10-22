@@ -12,7 +12,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=noodles-default-settings
 PKG_VERSION:=1.1
-PKG_RELEASE:=$(COMMITCOUNT)
+PKG_RELEASE:=2
 
 PKG_LICENSE:=GPL-3.0
 
@@ -22,14 +22,14 @@ define Package/noodles-default-settings
   SECTION:=luci
   CATEGORY:=LuCI
   TITLE:=LuCI support for Default Settings
+  DEPENDS:=+luci
   PKGARCH:=all
-  DEPENDS:=+luci-lib-base +luci
 endef
 
 define Package/noodles-default-settings-chn
   $(Package/noodles-default-settings)
   TITLE+= (Optimize for CHN users)
-  DEPENDS:=+noodles-default-settings +@LUCI_LANG_zh_Hans
+  DEPENDS:=+noodles-default-settings +@LUCI_LANG_zh_Hans +luci-i18n-base-zh-cn
 endef
 
 define Build/Prepare
