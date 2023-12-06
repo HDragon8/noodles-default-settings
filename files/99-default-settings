@@ -27,6 +27,7 @@ echo "DISTRIB_REVISION='R23.12.5'" >> /etc/openwrt_release
 sed -i "/log-facility/d" "/etc/dnsmasq.conf"
 echo "log-facility=/dev/null" >> "/etc/dnsmasq.conf"
 
+rm -f "/www/luci-static/resources/view/status/include/29_ethinfo.js"
 rm -f "/tmp/luci-indexcache"
 rm -rf "/tmp/luci-modulecache"
 
